@@ -1,8 +1,10 @@
 package projeto.meuprojeto.dto;
 
 import jakarta.validation.constraints.NotBlank;
+import lombok.Data;
 import projeto.meuprojeto.model.Pecas;
 
+@Data
 public class CarroDto {
     private Long id;
 
@@ -13,7 +15,7 @@ public class CarroDto {
     private String modelo;
 
     @NotBlank
-    private String ano;
+    private Integer ano;
 
     private Pecas pecas;
 }
