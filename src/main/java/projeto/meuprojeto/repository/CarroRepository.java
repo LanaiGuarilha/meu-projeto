@@ -9,7 +9,7 @@ import projeto.meuprojeto.model.Carro;
 @Repository
 public interface CarroRepository extends JpaRepository<Carro, Long> {
 
-    boolean existsByModel(String modelo);
+    boolean existsByModelo(String modelo);
 
     @Query("SELECT c FROM Carro c WHERE c.modelo = :modelo")
     Carro encontrarPorModelo(@Param("modelo") String modelo);

@@ -8,6 +8,9 @@ import projeto.meuprojeto.exception.CarroException;
 import projeto.meuprojeto.model.Carro;
 import projeto.meuprojeto.repository.CarroRepository;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class CarroService {
 
@@ -21,7 +24,7 @@ public class CarroService {
     private ModelMapper modelMapper;
 
     public Carro cadastrarCarro(CarroDto carroDto) {
-        if (carroRepository.existsByModel(carroDto.getModelo())) {
+        if (carroRepository.existsByModelo(carroDto.getModelo())) {
             throw new CarroException("Carro Modelo " + carroDto.getModelo() + " já existe");
         }
 
@@ -32,7 +35,11 @@ public class CarroService {
 
     }
 
-    public Carro buscarPorModelo(String modelo) {
-        return carroRepository.encontrarPorModelo(modelo);
+    public List<CarroDto> listarTodosCarros() {
+        List<Carro> carros = carroRepository.findAll();
+        return carros.stream()
+                .map(carro -> modelMapper.map(carro, CarroDto.class))
+                .collect(Collectors.toList());
+
     }
 }

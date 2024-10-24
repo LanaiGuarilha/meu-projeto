@@ -14,7 +14,6 @@ public class CarroDto {
     @NotBlank
     private String modelo;
 
-    @NotBlank
     private Integer ano;
 
     private Pecas pecas;

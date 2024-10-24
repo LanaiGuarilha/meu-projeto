@@ -14,8 +14,10 @@ import projeto.meuprojeto.model.Carro;
 import projeto.meuprojeto.repository.CarroRepository;
 import projeto.meuprojeto.service.CarroService;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("projeto")
+@RequestMapping("carro")
 public class CarroController {
 
     @Autowired
@@ -34,14 +36,10 @@ public class CarroController {
         }
     }
 
-    @GetMapping("/completo")
-    public ResponseEntity<CarroDto> buscarPorCpf(@PathVariable @NotBlank String modelo) {
-        Carro carro = carroService.buscarPorModelo(modelo);
-        if (carro == null) {
-            throw new CarroNaoEncontradoException("Carro não encontrado para o MODELO: " + modelo);
-        }
-        CarroDto clienteDto = new ModelMapper().map(carro, CarroDto.class);
-        return ResponseEntity.ok(clienteDto);
+    @GetMapping("/todos")
+    public ResponseEntity<List<CarroDto>> listarTodosCarros() {
+       List<CarroDto> carro = carroService.listarTodosCarros();
+        return ResponseEntity.ok(carro);
     }
 
     @GetMapping("/hello")
