@@ -9,8 +9,8 @@ import projeto.meuprojeto.dto.PecasDto;
 import projeto.meuprojeto.repository.PecasRepository;
 import projeto.meuprojeto.service.PecasService;
 
-@RestController
-@RequestMapping("pecas")
+@RestController // Controlador web
+@RequestMapping("pecas") // Usada para mapear solicitações HTTP (como GET, POST, PUT, DELETE)
 public class PecasController {
 
     @Autowired

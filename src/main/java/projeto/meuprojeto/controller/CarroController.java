@@ -16,13 +16,13 @@ import projeto.meuprojeto.service.CarroService;
 
 import java.util.List;
 
-@RestController
-@RequestMapping("carro")
+@RestController // Controlador web
+@RequestMapping("carro") // Usada para mapear solicitações HTTP (como GET, POST, PUT, DELETE)
 public class CarroController {
 
-    @Autowired
+    @Autowired //Usada para injetar automaticamente dependências em classes.
     private CarroRepository repository;
-    @Autowired
+    @Autowired //Usada para injetar automaticamente dependências em classes.
     private CarroService carroService;
 
     @PostMapping

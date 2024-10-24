@@ -11,16 +11,16 @@ import projeto.meuprojeto.repository.CarroRepository;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Service
+@Service // Contém a lógica de negócios da aplicação.
 public class CarroService {
 
-    @Autowired
+    @Autowired //Usada para injetar automaticamente dependências em classes.
     private CarroRepository carroRepository;
 
 //    @Autowired
 //    private PecasRepository pecasRepository;
 
-    @Autowired
+    @Autowired //Usada para injetar automaticamente dependências em classes.
     private ModelMapper modelMapper;
 
     public Carro cadastrarCarro(CarroDto carroDto) {

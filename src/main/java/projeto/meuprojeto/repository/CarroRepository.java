@@ -6,7 +6,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import projeto.meuprojeto.model.Carro;
 
-@Repository
+@Repository //usada para marcar uma classe como um componente que lida com a persistência de dadod, normalmente interagindo com o banco de dados.
 public interface CarroRepository extends JpaRepository<Carro, Long> {
 
     boolean existsByModelo(String modelo);

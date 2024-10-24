@@ -10,10 +10,10 @@ import projeto.meuprojeto.repository.PecasRepository;
 
 import java.util.Optional;
 
-@Service
+@Service // Contém a lógica de negócios da aplicação.
 public class PecasService {
 
-    @Autowired
+    @Autowired //Usada para injetar automaticamente dependências em classes.
     private PecasRepository pecasRepository;
 
     public Pecas atualizarPecas(Long id, PecasDto pecasDto) {

@@ -6,17 +6,18 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import projeto.meuprojeto.dto.PecasDto;
 
-@Entity
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Entity //Informa ao JPA que essa classe é uma entidade que será mapeada para uma tabela no banco de dados.
+@Data //Gera automaticamente os métodos getters, setters, equals(), hashCode(), toString()
+@NoArgsConstructor //Construtor sem argumentos
+@AllArgsConstructor //Construtor com todos os campos
 public class Pecas {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //geração da chave primária
     private Long id;
     private String retrovisor;
     private String pneu;
